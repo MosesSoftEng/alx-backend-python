@@ -74,3 +74,46 @@ chmod +x 1-main.py
 
 ### :heavy_check_mark: Solution
 > [:point_right: 1-concat.py](1-concat.py)
+
+
+## [2. Basic annotations - floor](2-main.py)
+### :page_with_curl: Task requirements.
+Write a type-annotated function floor which takes a float n as argument and returns the floor of the float.
+```
+bob@dylan:~$ cat 2-main.py
+#!/usr/bin/env python3
+
+import math
+
+floor = __import__('2-floor').floor
+
+ans = floor(3.14)
+
+print(ans == math.floor(3.14))
+print(floor.__annotations__)
+print("floor(3.14) returns {}, which is a {}".format(ans, type(ans)))
+
+bob@dylan:~$ ./2-main.py
+True
+{'n': <class 'float'>, 'return': <class 'int'>}
+floor(3.14) returns 3, which is a <class 'int'>
+```
+
+### :wrench: Task setup.
+```bash
+# Create task files and set execute permission.
+touch 2-floor.py
+chmod +x 2-floor.py
+./2-floor.py
+
+pycodestyle 2-floor.py
+mypy 2-floor.py
+
+# Tests
+touch 2-main.py
+chmod +x 2-main.py
+./2-main.py
+```
+
+### :heavy_check_mark: Solution
+> [:point_right: 2-main.py](2-main.py)
