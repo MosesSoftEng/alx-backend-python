@@ -404,3 +404,48 @@ mypy 9-element_length.py
 
 ### :heavy_check_mark: Solution
 > [:point_right: 9-main.py](9-main.py)
+
+
+## [10. Duck typing - first element of a sequence](100-main.py)
+### :page_with_curl: Task requirements.
+Augment the following code with the correct duck-typed annotations:
+```
+# The types of the elements of the input are not know
+def safe_first_element(lst):
+    if lst:
+        return lst[0]
+    else:
+        return None
+```
+
+```
+bob@dylan:~$ cat 100-main.py 
+#!/usr/bin/env python3
+
+safe_first_element =  __import__('100-safe_first_element').safe_first_element
+
+print(safe_first_element.__annotations__)
+
+bob@dylan:~$ ./100-main.py 
+{'lst': typing.Sequence[typing.Any], 'return': typing.Union[typing.Any, NoneType]}
+```
+
+### :wrench: Task setup.
+```bash
+# Create task files and set execute permission.
+touch 100-safe_first_element.py
+chmod +x 100-safe_first_element.py
+./100-safe_first_element.py
+
+# Tests
+touch 100-main.py
+chmod +x 100-main.py
+./100-main.py
+
+# Lint
+pycodestyle 100-safe_first_element.py
+mypy 100-safe_first_element.py
+```
+
+### :heavy_check_mark: Solution
+> [:point_right: 100-main.py](100-main.py)
