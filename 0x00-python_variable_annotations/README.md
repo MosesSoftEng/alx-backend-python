@@ -3,7 +3,7 @@
 1. Python Type Annotation.
 
 # :computer: Tasks.
-## [0. Basic annotations - add](task_1)
+## [0. Basic annotations - add](0-main.py)
 ### :page_with_curl: Task requirements.
 Write a type-annotated function add that takes a float a and a float b as arguments and returns their sum as a float.
 ```
@@ -36,4 +36,7 @@ chmod +x 0-main.py
 ```
 
 ### :heavy_check_mark: Solution
-> [:point_right: task_1](task_1)
+> [:point_right: 0-main.py](0-main.py)
+
+
+
