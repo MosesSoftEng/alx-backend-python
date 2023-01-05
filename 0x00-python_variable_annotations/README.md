@@ -284,3 +284,43 @@ mypy 6-sum_mixed_list.py
 
 ### :heavy_check_mark: Solution
 > [:point_right: 5-main.py](5-main.py)
+
+
+## [7. Complex types - string and int/float to tuple](7-main.py)
+### :page_with_curl: Task requirements.
+Write a type-annotated function to_kv that takes a string k and an int OR float v as arguments and returns a tuple. The first element of the tuple is the string k. The second element is the square of the int/float v and should be annotated as a float.
+```
+bob@dylan:~$ cat 7-main.py
+#!/usr/bin/env python3
+
+to_kv = __import__('7-to_kv').to_kv
+
+print(to_kv.__annotations__)
+print(to_kv("eggs", 3))
+print(to_kv("school", 0.02))
+
+bob@dylan:~$ ./7-main.py
+{'k': <class 'str'>, 'v': typing.Union[int, float], 'return': typing.Tuple[str, float]}
+('eggs', 9)
+('school', 0.0004)
+```
+
+### :wrench: Task setup.
+```bash
+# Create task files and set execute permission.
+touch 7-to_kv.py
+chmod +x 7-to_kv.py
+./7-to_kv.py
+
+# Tests
+touch 7-main.py
+chmod +x 7-main.py
+./7-main.py
+
+# Lint
+pycodestyle 7-to_kv.py
+mypy 7-to_kv.py
+```
+
+### :heavy_check_mark: Solution
+> [:point_right: 7-main.py](7-main.py)
