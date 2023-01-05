@@ -117,3 +117,43 @@ chmod +x 2-main.py
 
 ### :heavy_check_mark: Solution
 > [:point_right: 2-main.py](2-main.py)
+
+
+## [3. Basic annotations - to string](3-main.py)
+### :page_with_curl: Task requirements.
+Write a type-annotated function to_str that takes a float n as argument and returns the string representation of the float.
+```
+bob@dylan:~$ cat 3-main.py
+#!/usr/bin/env python3
+to_str = __import__('3-to_str').to_str
+
+pi_str = to_str(3.14)
+print(pi_str == str(3.14))
+print(to_str.__annotations__)
+print("to_str(3.14) returns {} which is a {}".format(pi_str, type(pi_str)))
+
+bob@dylan:~$ ./3-main.py
+True
+{'n': <class 'float'>, 'return': <class 'str'>}
+to_str(3.14) returns 3.14, which is a <class 'str'>
+```
+
+### :wrench: Task setup.
+```bash
+# Create task files and set execute permission.
+touch 3-to_str.py
+chmod +x 3-to_str.py
+./3-to_str.py
+
+pycodestyle 3-to_str.py
+mypy 3-to_str.py
+
+# Tests
+touch 3-main.py
+chmod +x 3-main.py
+./3-main.py
+```
+
+### :heavy_check_mark: Solution
+> [:point_right: 3-main.py](3-main.py)
+
