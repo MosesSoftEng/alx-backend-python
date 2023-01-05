@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-This is a module that provides a function for adding two numbers.
+This is a module that provides a function for summing list values.
 """
 from typing import List
 

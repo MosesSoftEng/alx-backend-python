@@ -248,3 +248,39 @@ mypy 5-sum_list.py
 ### :heavy_check_mark: Solution
 > [:point_right: 5-main.py](5-main.py)
 
+
+## [0. Basic annotations - add](5-main.py)
+### :page_with_curl: Task requirements.
+Write a type-annotated function add that takes a float a and a float b as arguments and returns their sum as a float.
+```
+bob@dylan:~$ cat 5-main.py
+#!/usr/bin/env python3
+add = __import__('0-add').add
+
+print(add(1.11, 2.22) == 1.11 + 2.22)
+print(add.__annotations__)
+
+bob@dylan:~$ ./5-main.py
+True
+{'a':  <class 'float'>, 'b': <class 'float'>, 'return': <class 'float'>}
+```
+
+### :wrench: Task setup.
+```bash
+# Create task files and set execute permission.
+touch 6-sum_mixed_list.py
+chmod +x 6-sum_mixed_list.py
+./6-sum_mixed_list.py
+
+# Tests
+touch 6-main.py
+chmod +x 6-main.py
+./6-main.py
+
+# Lint
+pycodestyle 6-sum_mixed_list.py
+mypy 6-sum_mixed_list.py
+```
+
+### :heavy_check_mark: Solution
+> [:point_right: 5-main.py](5-main.py)
