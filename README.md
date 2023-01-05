@@ -35,7 +35,7 @@ echo '*/__pycache__/
 ## [0x00. Python - Variable Annotations](0x00-python_variable_annotations)
 Type Annotation (Strongly Dynamically typed) in python. Reason for implementing type Annotation:
 1. Code documentation.
-2. 2.	Linting and validation.
+2. Linting and validation.
 
 ### :wrench: Project setup.
 ```bash
