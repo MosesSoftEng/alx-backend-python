@@ -324,3 +324,79 @@ mypy 7-to_kv.py
 
 ### :heavy_check_mark: Solution
 > [:point_right: 7-main.py](7-main.py)
+
+
+## [8. Complex types - functions](8-main.py)
+### :page_with_curl: Task requirements.
+Write a type-annotated function make_multiplier that takes a float multiplier as argument and returns a function that multiplies a float by multiplier.
+
+```
+bob@dylan:~$ cat 8-main.py
+#!/usr/bin/env python3
+
+make_multiplier = __import__('8-make_multiplier').make_multiplier
+print(make_multiplier.__annotations__)
+fun = make_multiplier(2.22)
+print("{}".format(fun(2.22)))
+
+bob@dylan:~$ ./8-main.py
+{'multiplier': <class 'float'>, 'return': typing.Callable[[float], float]}
+4.928400000000001
+```
+
+### :wrench: Task setup.
+```bash
+# Create task files and set execute permission.
+touch 8-make_multiplier.py
+chmod +x 8-make_multiplier.py
+./8-make_multiplier.py
+
+# Tests
+touch 8-main.py
+chmod +x 8-main.py
+./8-main.py
+
+# Lint
+pycodestyle 8-make_multiplier.py
+mypy 8-make_multiplier.py
+```
+
+### :heavy_check_mark: Solution
+> [:point_right: 8-main.py](8-main.py)
+
+
+## [0. Basic annotations - add](9-main.py)
+### :page_with_curl: Task requirements.
+Write a type-annotated function add that takes a float a and a float b as arguments and returns their sum as a float.
+```
+bob@dylan:~$ cat 9-main.py
+#!/usr/bin/env python3
+add = __import__('0-add').add
+
+print(add(1.11, 2.22) == 1.11 + 2.22)
+print(add.__annotations__)
+
+bob@dylan:~$ ./9-main.py
+True
+{'a':  <class 'float'>, 'b': <class 'float'>, 'return': <class 'float'>}
+```
+
+### :wrench: Task setup.
+```bash
+# Create task files and set execute permission.
+touch 9-element_length.py
+chmod +x 9-element_length.py
+./9-element_length.py
+
+# Tests
+touch 9-main.py
+chmod +x 9-main.py
+./9-main.py
+
+# Lint
+pycodestyle 9-element_length.py
+mypy 9-element_length.py
+```
+
+### :heavy_check_mark: Solution
+> [:point_right: 9-main.py](9-main.py)
