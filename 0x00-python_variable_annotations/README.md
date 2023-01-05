@@ -157,3 +157,52 @@ chmod +x 3-main.py
 ### :heavy_check_mark: Solution
 > [:point_right: 3-main.py](3-main.py)
 
+
+## [4. Define variables](4-main.py)
+### :page_with_curl: Task requirements.
+Define and annotate the following variables with the specified values:
+
+  * a, an integer with a value of 1
+  * pi, a float with a value of 3.14
+  * i_understand_annotations, a boolean with a value of True
+  * school, a string with a value of “Holberton”
+```
+bob@dylan:~$ cat 4-main.py
+#!/usr/bin/env python3
+
+a = __import__('4-define_variables').a
+pi = __import__('4-define_variables').pi
+i_understand_annotations = __import__('4-define_variables').i_understand_annotations
+school = __import__('4-define_variables').school
+
+print("a is a {} with a value of {}".format(type(a), a))
+print("pi is a {} with a value of {}".format(type(pi), pi))
+print("i_understand_annotations is a {} with a value of {}".format(type(i_understand_annotations), i_understand_annotations))
+print("school is a {} with a value of {}".format(type(school), school))
+
+bob@dylan:~$ ./4-main.py
+a is a <class 'int'> with a value of 1
+pi is a <class 'float'> with a value of 3.14
+i_understand_annotations is a <class 'bool'> with a value of True
+school is a <class 'str'> with a value of Holberton
+```
+
+### :wrench: Task setup.
+```bash
+# Create task files and set execute permission.
+touch 4-define_variables.py
+chmod +x 4-define_variables.py
+./4-define_variables.py
+
+pycodestyle 4-define_variables.py
+mypy 4-define_variables.py
+
+# Tests
+touch 4-main.py
+chmod +x 4-main.py
+./4-main.py
+```
+
+### :heavy_check_mark: Solution
+> [:point_right: 4-main.py](4-main.py)
+
