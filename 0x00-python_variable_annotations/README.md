@@ -365,20 +365,24 @@ mypy 8-make_multiplier.py
 > [:point_right: 8-main.py](8-main.py)
 
 
-## [0. Basic annotations - add](9-main.py)
+## [9. Let's duck type an iterable object](9-main.py)
 ### :page_with_curl: Task requirements.
-Write a type-annotated function add that takes a float a and a float b as arguments and returns their sum as a float.
+Annotate the below function’s parameters and return values with the appropriate types
 ```
-bob@dylan:~$ cat 9-main.py
+def element_length(lst):
+    return [(i, len(i)) for i in lst]
+```
+
+```
+bob@dylan:~$ cat 9-main.py 
 #!/usr/bin/env python3
-add = __import__('0-add').add
 
-print(add(1.11, 2.22) == 1.11 + 2.22)
-print(add.__annotations__)
+element_length =  __import__('9-element_length').element_length
 
-bob@dylan:~$ ./9-main.py
-True
-{'a':  <class 'float'>, 'b': <class 'float'>, 'return': <class 'float'>}
+print(element_length.__annotations__)
+
+bob@dylan:~$ ./9-main.py 
+{'lst': typing.Iterable[typing.Sequence], 'return': typing.List[typing.Tuple[typing.Sequence, int]]}
 ```
 
 ### :wrench: Task setup.
