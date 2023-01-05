@@ -1,6 +1,7 @@
-# :book: alx-backend-javascript
+# :book: alx-backend-python
 ## :page_with_curl: Topics Covered
-1. Python annotation; Strongly dynamically typed
+1. Python annotation; Strongly dynamically typed.
+2. mypy python paackage
 
 ## :wrench: Project setup.
 ```bash

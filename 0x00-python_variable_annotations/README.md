@@ -26,6 +26,7 @@ touch 0-add.py
 chmod +x 0-add.py
 ./0-add.py
 
+# Lint checks
 pycodestyle 0-add.py
 mypy 0-add.py
 
@@ -39,4 +40,37 @@ chmod +x 0-main.py
 > [:point_right: 0-main.py](0-main.py)
 
 
+## [1. Basic annotations - concat](1-concat.py)
+### :page_with_curl: Task requirements.
+Write a type-annotated function add that takes a float a and a float b as arguments and returns their sum as a float.
+```
+bob@dylan:~$ cat 1-concat.py
+#!/usr/bin/env python3
+add = __import__('0-add').add
 
+print(add(1.11, 2.22) == 1.11 + 2.22)
+print(add.__annotations__)
+
+bob@dylan:~$ ./1-concat.py
+True
+{'a':  <class 'float'>, 'b': <class 'float'>, 'return': <class 'float'>}
+```
+
+### :wrench: Task setup.
+```bash
+# Create task files and set execute permission.
+touch 1-concat.py
+chmod +x 1-concat.py
+./1-concat.py
+
+pycodestyle 1-concat.py
+mypy 1-concat.py
+
+# Tests
+touch 1-main.py
+chmod +x 1-main.py
+./1-main.py
+```
+
+### :heavy_check_mark: Solution
+> [:point_right: 1-concat.py](1-concat.py)
