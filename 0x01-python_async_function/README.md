@@ -94,3 +94,45 @@ chmod +x 1-main.py
 > [:point_right: 1-concurrent_coroutines.py](1-concurrent_coroutines.py)
 
 
+## [2. Measure the runtime](2-measure_runtime.py)
+### :page_with_curl: Task requirements.
+From the previous file, import wait_n into 2-measure_runtime.py.
+
+Create a measure_time function with integers n and max_delay as arguments that measures the total execution time for wait_n(n, max_delay), and returns total_time / n. Your function should return a float.
+
+Use the time module to measure an approximate elapsed time.
+```
+bob@dylan:~$ cat 2-main.py
+#!/usr/bin/env python3
+
+measure_time = __import__('2-measure_runtime').measure_time
+
+n = 5
+max_delay = 9
+
+print(measure_time(n, max_delay))
+
+bob@dylan:~$ ./2-main.py
+1.759705400466919
+```
+
+### :wrench: Task setup.
+```bash
+# Create task files and set execute permission.
+touch 2-measure_runtime.py
+chmod +x 2-measure_runtime.py
+./2-measure_runtime.py
+
+pycodestyle 2-measure_runtime.py
+mypy 2-measure_runtime.py
+
+# Tests
+touch 2-main.py
+chmod +x 2-main.py
+./2-main.py
+```
+
+### :heavy_check_mark: Solution
+> [:point_right: 2-measure_runtime.py](2-measure_runtime.py)
+
+
