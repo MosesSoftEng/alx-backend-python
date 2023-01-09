@@ -181,7 +181,34 @@ chmod +x 3-main.py
 > [:point_right: 3-main.py](3-tasks.py)
 
 
-mypy 4-define_variables.py
+## [4. Tasks](4-main.py)
+### :page_with_curl: Task requirements.
+Take the code from wait_n and alter it into a new function task_wait_n. The code is nearly identical to wait_n except task_wait_random is being called.
+```
+bob@dylan:~$ cat 4-main.py
+#!/usr/bin/env python3
+
+import asyncio
+
+task_wait_n = __import__('4-tasks').task_wait_n
+
+n = 5
+max_delay = 6
+print(asyncio.run(task_wait_n(n, max_delay)))
+
+bob@dylan:~$ ./4-main.py
+[0.2261658205652346, 1.1942770588220557, 1.8410422186086628, 2.1457353803430523, 4.002505454641153]
+```
+
+### :wrench: Task setup.
+```bash
+# Create task files and set execute permission.
+touch 4-tasks.py
+chmod +x 4-tasks.py
+./4-tasks.py
+
+pycodestyle 4-tasks.py
+mypy 4-tasks.py
 
 # Tests
 touch 4-main.py
