@@ -46,7 +46,7 @@ chmod +x 0-main.py
 > [:point_right: 0-async_generator.py](0-async_generator.py)
 
 
-## [1. Let's execute multiple coroutines at the same time with async](1-async_comprehension.py)
+## [1. Async Comprehensions](1-async_comprehension.py)
 ### :page_with_curl: Task requirements.
 Import async_generator from the previous task and then write a coroutine called async_comprehension that takes no arguments.
 
@@ -87,5 +87,53 @@ chmod +x 1-main.py
 
 ### :heavy_check_mark: Solution
 > [:point_right: 1-async_comprehension.py](1-async_comprehension.py)
+
+
+## [2. Run time for four parallel comprehensions](2-measure_runtime.py)
+### :page_with_curl: Task requirements.
+Import async_comprehension from the previous file and write a measure_runtime coroutine that will execute async_comprehension four times in parallel using asyncio.gather.
+
+measure_runtime should measure the total runtime and return it.
+
+Notice that the total runtime is roughly 10 seconds, explain it to yourself.
+```
+bob@dylan:~$ cat 2-main.py
+#!/usr/bin/env python3
+
+import asyncio
+
+
+measure_runtime = __import__('2-measure_runtime').measure_runtime
+
+
+async def main():
+    return await(measure_runtime())
+
+print(
+    asyncio.run(main())
+)
+
+bob@dylan:~$ ./2-main.py
+10.021936893463135
+```
+
+### :wrench: Task setup.
+```bash
+# Create task files and set execute permission.
+touch 2-measure_runtime.py
+chmod +x 2-measure_runtime.py
+./2-measure_runtime.py
+
+pycodestyle 2-measure_runtime.py
+mypy 2-measure_runtime.py
+
+# Tests
+touch 2-main.py
+chmod +x 2-main.py
+./2-main.py
+```
+
+### :heavy_check_mark: Solution
+> [:point_right: 2-measure_runtime.py](2-measure_runtime.py)
 
 
